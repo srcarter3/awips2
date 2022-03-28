@@ -27,9 +27,9 @@ jobs:
       - name: Checkout awips2
         uses: actions/checkout@v3
       ### Might need to install 'svn' command first??
-      - name: Install SVN
-        run: |
-          pip install svn
+#       - name: Install SVN
+#         run: |
+#           pip install svn
       # Do individual pulls for all the files in the ndm text file
       # I think we need some kind of SECRET for this so the pull can be made?
       - name: Pull latest from vlab svn repo
