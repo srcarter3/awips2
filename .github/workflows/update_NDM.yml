@@ -34,7 +34,18 @@ jobs:
       # I think we need some kind of SECRET for this so the pull can be made?
       - name: Pull latest from vlab svn repo
         run: |
-          cd awips2/rpms/awips2.edex/Installer.edex/ndm/
+          pwd
+          ls
+          cd awips2/
+          ls
+          cd rpms/
+          ls
+          cd awips2.edex/
+          ls
+          cd Installer.edex/
+          ls
+          cd ndm
+          ls
           for file in *; do
             svn export --force https://vlab.noaa.gov/svn/awips-ndm/trunk/"$file" --username ${{ secrets.VLAB_UNAME }} --password ${{ secrets.VLAB_PASS }}
           done
