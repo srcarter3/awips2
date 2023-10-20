@@ -1,0 +1,1695 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for all things AWIPS.">
+      
+      
+        <link rel="canonical" href="http://unidata.github.io/awips2/cave/goes-16-17-satellite/">
+      
+      
+        <meta name="author" content="support-awips@unidata.ucar.edu">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-unidata-2.0.3">
+    
+    
+      
+        <title>GOES 16/17 - Unidata AWIPS User Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-37fa87ea8f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-624922a329.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  
+    <a href="../..">
+      <div class="background-logo" style="background-image:url('../../images/cave.png');background-repeat:no-repeat;height:107px">
+    
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-header-nav__button md-logo">
+          
+            
+              <img src="../../images/home.png" width="24" height="24">
+            
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  CAVE User Manual
+                </span>
+              
+            
+            
+              GOES 16/17
+            
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-nav__button md-logo">
+      
+        
+          <img src="../../images/home.png">
+        
+      
+    </a>
+    Unidata AWIPS User Manual
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-cave/" title="Install CAVE" class="md-nav__link">
+      Install CAVE
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-edex/" title="Install EDEX" class="md-nav__link">
+      Install EDEX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/common-problems/" title="Common Problems" class="md-nav__link">
+      Common Problems
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      CAVE User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        CAVE User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d2d-perspective/" title="D2D Perspective" class="md-nav__link">
+      D2D Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../maps-views-projections/" title="Maps, Views, Projections" class="md-nav__link">
+      Maps, Views, Projections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bundles-and-procedures/" title="Displays and Procedures" class="md-nav__link">
+      Displays and Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../localization-perspective/" title="Localization Perspective" class="md-nav__link">
+      Localization Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nsharp/" title="NSHARP" class="md-nav__link">
+      NSHARP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../warngen/" title="WarnGen Walkthrough" class="md-nav__link">
+      WarnGen Walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        GOES 16/17
+      </label>
+    
+    <a href="./" title="GOES 16/17" class="md-nav__link md-nav__link--active">
+      GOES 16/17
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ldm-pattern-actions" title="LDM Pattern Actions" class="md-nav__link">
+    LDM Pattern Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#individual-channels" title="Individual Channels" class="md-nav__link">
+    Individual Channels
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#east-conus-1km" title="East CONUS 1km" class="md-nav__link">
+    East CONUS 1km
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#east-full-disk-6km" title="East Full Disk 6km" class="md-nav__link">
+    East Full Disk 6km
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#east-mesoscale-sectors-emeso-1-emeso-2" title="East Mesoscale Sectors (EMESO-1, EMESO-2)" class="md-nav__link">
+    East Mesoscale Sectors (EMESO-1, EMESO-2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#west-conus-1km" title="West CONUS 1km" class="md-nav__link">
+    West CONUS 1km
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#west-full-disk" title="West Full Disk" class="md-nav__link">
+    West Full Disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#west-mesoscale-sectors-wmeso-1-wmeso-2" title="West Mesoscale Sectors (WMESO-1, WMESO-2)" class="md-nav__link">
+    West Mesoscale Sectors (WMESO-1, WMESO-2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alaska" title="Alaska" class="md-nav__link">
+    Alaska
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hawaii" title="Hawaii" class="md-nav__link">
+    Hawaii
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puerto-rico-prregi" title="Puerto Rico (PRREGI)" class="md-nav__link">
+    Puerto Rico (PRREGI)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rgb-composites" title="RGB Composites" class="md-nav__link">
+    RGB Composites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#day-cloud-phase" title="Day Cloud Phase" class="md-nav__link">
+    Day Cloud Phase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fire-temperature" title="Fire Temperature" class="md-nav__link">
+    Fire Temperature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-land-cloud" title="Day Land Cloud" class="md-nav__link">
+    Day Land Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-cloud-convection" title="Day Cloud Convection" class="md-nav__link">
+    Day Cloud Convection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-land-cloud-fires" title="Day Land Cloud Fires" class="md-nav__link">
+    Day Land Cloud Fires
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visir-sandwich" title="VIS/IR Sandwich" class="md-nav__link">
+    VIS/IR Sandwich
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-water-vapor" title="Simple Water Vapor" class="md-nav__link">
+    Simple Water Vapor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#air-mass" title="Air Mass" class="md-nav__link">
+    Air Mass
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ash" title="Ash" class="md-nav__link">
+    Ash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-convection" title="Day Convection" class="md-nav__link">
+    Day Convection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-snow-fog" title="Day Snow Fog" class="md-nav__link">
+    Day Snow Fog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differential-water-vapor" title="Differential Water Vapor" class="md-nav__link">
+    Differential Water Vapor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dust" title="Dust" class="md-nav__link">
+    Dust
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cimss-natural-color" title="CIMSS Natural Color" class="md-nav__link">
+    CIMSS Natural Color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nighttime-microphysics" title="Nighttime Microphysics" class="md-nav__link">
+    Nighttime Microphysics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so2" title="SO2" class="md-nav__link">
+    SO2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cira-geocolor" title="CIRA Geocolor" class="md-nav__link">
+    CIRA Geocolor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cira-debra-dust" title="CIRA Debra Dust" class="md-nav__link">
+    CIRA Debra Dust
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cira-cloud-snow" title="CIRA Cloud Snow" class="md-nav__link">
+    CIRA Cloud Snow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daytime-composite-1" title="Daytime Composite 1" class="md-nav__link">
+    Daytime Composite 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daytime-composite-5" title="Daytime Composite 5" class="md-nav__link">
+    Daytime Composite 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel-differences" title="Channel Differences" class="md-nav__link">
+    Channel Differences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-products" title="Derived Products" class="md-nav__link">
+    Derived Products
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geostationary-lightning-mapper-glm" title="Geostationary Lightning Mapper (GLM)" class="md-nav__link">
+    Geostationary Lightning Mapper (GLM)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-motion-winds" title="Derived Motion Winds" class="md-nav__link">
+    Derived Motion Winds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertical-temperature-and-moisture-profile" title="Vertical Temperature and Moisture Profile" class="md-nav__link">
+    Vertical Temperature and Moisture Profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdf5-data-store" title="HDF5 Data Store" class="md-nav__link">
+    HDF5 Data Store
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d2d-gis-shapefiles/" title="GIS and Shapefiles" class="md-nav__link">
+      GIS and Shapefiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d2d-gridded-models/" title="Volume Browser" class="md-nav__link">
+      Volume Browser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d2d-tools/" title="Display Tools" class="md-nav__link">
+      Display Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d2d-radar-tools/" title="Radar Tools" class="md-nav__link">
+      Radar Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d2d-edit-menus/" title="Editing Menus" class="md-nav__link">
+      Editing Menus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cave-localization/" title="Change Localization" class="md-nav__link">
+      Change Localization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../import-export/" title="Import/Export" class="md-nav__link">
+      Import/Export
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      EDEX User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        EDEX User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install/start-edex/" title="EDEX Basic Commands" class="md-nav__link">
+      EDEX Basic Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/settings/" title="EDEX Settings" class="md-nav__link">
+      EDEX Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/distributed-computing/" title="Distributed EDEX" class="md-nav__link">
+      Distributed EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/edex-ingest-docker-container/" title="Docker EDEX" class="md-nav__link">
+      Docker EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/ldm/" title="LDM Feeds" class="md-nav__link">
+      LDM Feeds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/data-distribution-files/" title="Data Distribution Files" class="md-nav__link">
+      Data Distribution Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/new-grid/" title="Ingest a New Grid" class="md-nav__link">
+      Ingest a New Grid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/data-purge/" title="Purging and Retention" class="md-nav__link">
+      Purging and Retention
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/edex-users/" title="Monitor Users" class="md-nav__link">
+      Monitor Users
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/data-plugins/" title="Data Plugins" class="md-nav__link">
+      Data Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../edex/case-studies/" title="Archive Case Studies" class="md-nav__link">
+      Archive Case Studies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../python/overview/" title="Python-AWIPS" class="md-nav__link">
+      Python-AWIPS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/educational-resources/" title="Educational Resources" class="md-nav__link">
+      Educational Resources
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../dev/awips-development-environment/" title="Development" class="md-nav__link">
+      Development
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-grid-parameters/" title="AWIPS Grid Parameters" class="md-nav__link">
+      AWIPS Grid Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/maps-database/" title="Maps Database" class="md-nav__link">
+      Maps Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-acronyms/" title="Acronyms and Abbreviations" class="md-nav__link">
+      Acronyms and Abbreviations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-wsr88d/" title="WSR-88D Product Table" class="md-nav__link">
+      WSR-88D Product Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cave-keyboard-shortcuts/" title="Keyboard Shortcuts" class="md-nav__link">
+      Keyboard Shortcuts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/cave_d2d/" title="Raytheon: CAVE User's Manual" class="md-nav__link">
+      Raytheon: CAVE User's Manual
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/smm/" title="Raytheon: AWIPS System Manager's Manual" class="md-nav__link">
+      Raytheon: AWIPS System Manager's Manual
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ldm-pattern-actions" title="LDM Pattern Actions" class="md-nav__link">
+    LDM Pattern Actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#individual-channels" title="Individual Channels" class="md-nav__link">
+    Individual Channels
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#east-conus-1km" title="East CONUS 1km" class="md-nav__link">
+    East CONUS 1km
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#east-full-disk-6km" title="East Full Disk 6km" class="md-nav__link">
+    East Full Disk 6km
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#east-mesoscale-sectors-emeso-1-emeso-2" title="East Mesoscale Sectors (EMESO-1, EMESO-2)" class="md-nav__link">
+    East Mesoscale Sectors (EMESO-1, EMESO-2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#west-conus-1km" title="West CONUS 1km" class="md-nav__link">
+    West CONUS 1km
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#west-full-disk" title="West Full Disk" class="md-nav__link">
+    West Full Disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#west-mesoscale-sectors-wmeso-1-wmeso-2" title="West Mesoscale Sectors (WMESO-1, WMESO-2)" class="md-nav__link">
+    West Mesoscale Sectors (WMESO-1, WMESO-2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alaska" title="Alaska" class="md-nav__link">
+    Alaska
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hawaii" title="Hawaii" class="md-nav__link">
+    Hawaii
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puerto-rico-prregi" title="Puerto Rico (PRREGI)" class="md-nav__link">
+    Puerto Rico (PRREGI)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rgb-composites" title="RGB Composites" class="md-nav__link">
+    RGB Composites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#day-cloud-phase" title="Day Cloud Phase" class="md-nav__link">
+    Day Cloud Phase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fire-temperature" title="Fire Temperature" class="md-nav__link">
+    Fire Temperature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-land-cloud" title="Day Land Cloud" class="md-nav__link">
+    Day Land Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-cloud-convection" title="Day Cloud Convection" class="md-nav__link">
+    Day Cloud Convection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-land-cloud-fires" title="Day Land Cloud Fires" class="md-nav__link">
+    Day Land Cloud Fires
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visir-sandwich" title="VIS/IR Sandwich" class="md-nav__link">
+    VIS/IR Sandwich
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-water-vapor" title="Simple Water Vapor" class="md-nav__link">
+    Simple Water Vapor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#air-mass" title="Air Mass" class="md-nav__link">
+    Air Mass
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ash" title="Ash" class="md-nav__link">
+    Ash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-convection" title="Day Convection" class="md-nav__link">
+    Day Convection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-snow-fog" title="Day Snow Fog" class="md-nav__link">
+    Day Snow Fog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differential-water-vapor" title="Differential Water Vapor" class="md-nav__link">
+    Differential Water Vapor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dust" title="Dust" class="md-nav__link">
+    Dust
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cimss-natural-color" title="CIMSS Natural Color" class="md-nav__link">
+    CIMSS Natural Color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nighttime-microphysics" title="Nighttime Microphysics" class="md-nav__link">
+    Nighttime Microphysics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so2" title="SO2" class="md-nav__link">
+    SO2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cira-geocolor" title="CIRA Geocolor" class="md-nav__link">
+    CIRA Geocolor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cira-debra-dust" title="CIRA Debra Dust" class="md-nav__link">
+    CIRA Debra Dust
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cira-cloud-snow" title="CIRA Cloud Snow" class="md-nav__link">
+    CIRA Cloud Snow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daytime-composite-1" title="Daytime Composite 1" class="md-nav__link">
+    Daytime Composite 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daytime-composite-5" title="Daytime Composite 5" class="md-nav__link">
+    Daytime Composite 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel-differences" title="Channel Differences" class="md-nav__link">
+    Channel Differences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-products" title="Derived Products" class="md-nav__link">
+    Derived Products
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geostationary-lightning-mapper-glm" title="Geostationary Lightning Mapper (GLM)" class="md-nav__link">
+    Geostationary Lightning Mapper (GLM)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-motion-winds" title="Derived Motion Winds" class="md-nav__link">
+    Derived Motion Winds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertical-temperature-and-moisture-profile" title="Vertical Temperature and Moisture Profile" class="md-nav__link">
+    Vertical Temperature and Moisture Profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdf5-data-store" title="HDF5 Data Store" class="md-nav__link">
+    HDF5 Data Store
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Unidata/awips2/edit/unidata_18.2.1/docs/cave/goes-16-17-satellite.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="goes-1617">GOES 16/17<a class="headerlink" href="#goes-1617" title="Permanent link"></a></h1>
+<p>The <strong><em>goesr</em></strong> EDEX decoder supports the ingest of GOES products coming over NOAAPort and Unidata's IDD. These include <a href="#individual-channels"><strong>single channel imagery</strong></a>, <a href="#derived-products"><strong>derived products</strong></a> (Level 2b netCDF files), gridded <a href="#geostationary-lightning-mapper-glm"><strong>Geostationary Lightning Mapper</strong></a> (GLM) products (produced by Eric Bruning at Texas Tech), <a href="#cira-geocolor"><strong>CIRA created RGB</strong></a> specific products, and <a href="#vertical-temperature-and-moisture-profile"><strong>vertical temperature/moisture profiles</strong></a>. Using derived parameters, additional <a href="#rgb-composites"><strong>RGB</strong></a> and <a href="#channel-differences"><strong>channel difference</strong></a> products can be loaded. The <strong><em>dmw</em></strong> EDEX decoder supports the ingest of GOES <a href="#derived-motion-winds"><strong>derived motion winds</strong></a>.</p>
+<p><img alt="" src="../../images/GOESEW.png" /></p>
+<p>GOES East and West products are accessible in the <strong>Satellite</strong> menu.  The menu is broken into sections starting with common CONUS GOES East/West Combo products. There are submenus for each of the separate geospatial sectors:</p>
+<ul>
+<li>East Full Disk</li>
+<li>East CONUS</li>
+<li>East Mesoscale Sectors (x2)</li>
+<li>West Full Disk</li>
+<li>West CONUS</li>
+<li>West Mesoscale Sectors (x2)</li>
+<li>Hawaii</li>
+<li>Alaska</li>
+<li>Puerto Rico</li>
+</ul>
+<p>Each sector submenu has products for individual channels and vertical profiles, as well as submenus for derived products, channel differences, RGB Composites, GLM data, and derived motion winds. GLM data can also be found with its own submenu option a little lower down the menu and under the <strong>Surface</strong> menu.</p>
+<div class="admonition warning">
+<p class="admonition-title">The RGB products are not available on MacOS or in a Virtual Machine running CAVE.</p>
+</div>
+<p><img alt="" src="../../images/satelliteMenuNew.png" /></p>
+<hr />
+<h2 id="ldm-pattern-actions">LDM Pattern Actions<a class="headerlink" href="#ldm-pattern-actions" title="Permanent link"></a></h2>
+<p>The Unidata IDD redistributes both the NOAAPort/SBN GOES tiled products as well as stitched together GOES products. While AWIPS can decode and ingest both, it's important to only be requesting from one or the other so you aren't creating duplicate processing.  The entries that should be used for GOES data are shown below which is found in the LDM's pqact.conf file, located in <code>/awips2/ldm/etc</code>.   (For the full list of pqact entries, you can view <a href="https://github.com/Unidata/awips2/blob/unidata_18.2.1/rpms/awips2.upc/Installer.ldm/patch/etc/pqact.goesr">this</a> file).</p>
+<pre><code># GOES 16/17 Single Channel (ABI) via Unidata IDD
+NIMAGE  ^/data/ldm/pub/native/satellite/GOES/([^/]*)/Products/CloudAndMoistureImagery/([^/]*)/([^/]*)/([0-9]{8})/([^/]*)(c[0-9]{7})(..)(.....).nc
+    FILE    -close -edex    /awips2/data_store/GOES/\4/\7/CMI-IDD/\5\6\7\8.nc4
+
+# GOES 16/17 derived products + derived motion wind via SBN
+HDS ^(IXT.[8-9]9) (KNES) (..)(..)(..)
+    FILE    -close -edex    /awips2/data_store/GOES/(\3:yyyy)(\3:mm)\3/\4/derivedProducts-SBN/\1_KNES_\2\3\4\5-(seq)
+NOTHER  ^(IXT[WXY]01) (KNES) (..)(..)(..)
+    FILE    -close -edex    /awips2/data_store/GOES/(\3:yyyy)(\3:mm)\3/\4/derivedProducts-SBN/\1_KNES_\2\3\4\5-(seq)
+
+# GOES 16 GLM Gridded Products via Texas Tech--&gt;Unidata IDD 
+NIMAGE  ^/data/ldm/pub/native/satellite/GOES/([^/]*)/Products/GeostationaryLightningMapper/([^/]*)/([0-9]{8})/([^/]*)(c[0-9]{7})(..)(.....).nc
+    FILE    -close -edex    /awips2/data_store/GOES/\3/\6/GLM-IDD/\4\5\6\7.nc4
+
+# GOES CIRA derived products 
+NIMAGE  ^/data/ldm/pub/native/satellite/GOES/([^/]*)/Products/GeoColor/([^/]*)/([^/]*)/([0-9]{8})/([^/]*)(c[0-9]{7})(..)(.....).nc
+    FILE    -close -edex    /awips2/data_store/GOES/\4/\7/CIRA/GeoColor/\5\6\7\8.nc4
+NIMAGE  ^/data/ldm/pub/native/satellite/GOES/([^/]*)/Products/DebraDust/([^/]*)/([^/]*)/([0-9]{8})/([^/]*)(c[0-9]{7})(..)(.....).nc
+    FILE    -close -edex    /awips2/data_store/GOES/\4/\7/CIRA/DebraDust/\5\6\7\8.nc4
+NIMAGE  ^/data/ldm/pub/native/satellite/GOES/([^/]*)/Products/CloudSnow/([^/]*)/([^/]*)/([0-9]{8})/([^/]*)(c[0-9]{7})(..)(.....).nc
+    FILE    -close -edex    /awips2/data_store/GOES/\4/\7/CIRA/CloudSnow/\5\6\7\8.nc4
+</code></pre>
+<hr />
+<h2 id="individual-channels">Individual Channels<a class="headerlink" href="#individual-channels" title="Permanent link"></a></h2>
+<p>All geospatial sectors have 16 individual channel products that can be viewed.  Below are samples of Channel 14 (11.20&mu;m) for each of the sectors.</p>
+<h3 id="east-conus-1km">East CONUS 1km<a class="headerlink" href="#east-conus-1km" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/goes-econus.png" /></p>
+<h3 id="east-full-disk-6km">East Full Disk 6km<a class="headerlink" href="#east-full-disk-6km" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/goes-efd.png" /></p>
+<h3 id="east-mesoscale-sectors-emeso-1-emeso-2">East Mesoscale Sectors (EMESO-1, EMESO-2)<a class="headerlink" href="#east-mesoscale-sectors-emeso-1-emeso-2" title="Permanent link"></a></h3>
+<p>Two floating mesoscale sectors (location will vary day to day from image shown)</p>
+<p><img alt="" src="../../images/goes-emeso12.png" /></p>
+<h3 id="west-conus-1km">West CONUS 1km<a class="headerlink" href="#west-conus-1km" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/goes-wconus.png" /></p>
+<h3 id="west-full-disk">West Full Disk<a class="headerlink" href="#west-full-disk" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/goes-wfd.png" /></p>
+<h3 id="west-mesoscale-sectors-wmeso-1-wmeso-2">West Mesoscale Sectors (WMESO-1, WMESO-2)<a class="headerlink" href="#west-mesoscale-sectors-wmeso-1-wmeso-2" title="Permanent link"></a></h3>
+<p>Two floating mesoscale sectors (location will vary day to day from image shown)</p>
+<p><img alt="" src="../../images/goes-wmeso12.png" /></p>
+<h3 id="alaska">Alaska<a class="headerlink" href="#alaska" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/goes-ak.png" /></p>
+<h3 id="hawaii">Hawaii<a class="headerlink" href="#hawaii" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/goes-hi.png" /></p>
+<h3 id="puerto-rico-prregi">Puerto Rico (PRREGI)<a class="headerlink" href="#puerto-rico-prregi" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/goes-pr.png" /></p>
+<hr />
+<h2 id="rgb-composites">RGB Composites<a class="headerlink" href="#rgb-composites" title="Permanent link"></a></h2>
+<p>RGB Composites are made by combining 3 channels and are available for each sector. Quite a few new RGB products have been added in Unidata's 18.2.1 release. These products are generated <strong>on the fly in AWIPS</strong> using the existing channel products from EDEX.</p>
+<div class="admonition warning">
+<p class="admonition-title">GOES RGB Imagery is NOT SUPPORTED on macOS or within a Virtual Machine</p>
+<p>OpenGL Shading Language limitations prevent multi-channel imagery from displaying correctly on Mac or in a Virtual Machine.  Please use the Linux or Windows installs to view RGB products.</p>
+</div>
+<h3 id="day-cloud-phase">Day Cloud Phase<a class="headerlink" href="#day-cloud-phase" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-01-DayCloudPhase.png" /></p>
+<h3 id="fire-temperature">Fire Temperature<a class="headerlink" href="#fire-temperature" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-02-FireTemperature.png" /></p>
+<h3 id="day-land-cloud">Day Land Cloud<a class="headerlink" href="#day-land-cloud" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-03-DayLandCloud.png" /></p>
+<h3 id="day-cloud-convection">Day Cloud Convection<a class="headerlink" href="#day-cloud-convection" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-04-DayCloudConvection.png" /></p>
+<h3 id="day-land-cloud-fires">Day Land Cloud Fires<a class="headerlink" href="#day-land-cloud-fires" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-05-DayLandCloudFires.png" /></p>
+<h3 id="visir-sandwich">VIS/IR Sandwich<a class="headerlink" href="#visir-sandwich" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-06-VISIRSandwich.png" /></p>
+<h3 id="simple-water-vapor">Simple Water Vapor<a class="headerlink" href="#simple-water-vapor" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-07-SimpleWaterVapor.png" /></p>
+<h3 id="air-mass">Air Mass<a class="headerlink" href="#air-mass" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-08-AirMass.png" /></p>
+<h3 id="ash">Ash<a class="headerlink" href="#ash" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-09-Ash.png" /></p>
+<h3 id="day-convection">Day Convection<a class="headerlink" href="#day-convection" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-10-DayConvection.png" /></p>
+<h3 id="day-snow-fog">Day Snow Fog<a class="headerlink" href="#day-snow-fog" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-11-DaySnowFog.png" /></p>
+<h3 id="differential-water-vapor">Differential Water Vapor<a class="headerlink" href="#differential-water-vapor" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-12-DifferentialWaterVapor.png" /></p>
+<h3 id="dust">Dust<a class="headerlink" href="#dust" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-13-Dust.png" /></p>
+<h3 id="cimss-natural-color">CIMSS Natural Color<a class="headerlink" href="#cimss-natural-color" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-14-CIMSSNaturalColor.png" /></p>
+<h3 id="nighttime-microphysics">Nighttime Microphysics<a class="headerlink" href="#nighttime-microphysics" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-15-NighttimeMicrophysics.png" /></p>
+<h3 id="so2">SO2<a class="headerlink" href="#so2" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-16-SO2.png" /></p>
+<h3 id="cira-geocolor">CIRA Geocolor<a class="headerlink" href="#cira-geocolor" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-17-CIRAGeocolor.png" /></p>
+<h3 id="cira-debra-dust">CIRA Debra Dust<a class="headerlink" href="#cira-debra-dust" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-18-CIRADebraDust.png" /></p>
+<h3 id="cira-cloud-snow">CIRA Cloud Snow<a class="headerlink" href="#cira-cloud-snow" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-19-CIRACloudSnow.png" /></p>
+<h3 id="daytime-composite-1">Daytime Composite 1<a class="headerlink" href="#daytime-composite-1" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-20-DaytimeComp1.png" /></p>
+<h3 id="daytime-composite-5">Daytime Composite 5<a class="headerlink" href="#daytime-composite-5" title="Permanent link"></a></h3>
+<p><img alt="" src="../../images/RGB-21-DaytimeComp5.png" /></p>
+<hr />
+<h2 id="channel-differences">Channel Differences<a class="headerlink" href="#channel-differences" title="Permanent link"></a></h2>
+<p>Channel differences are the result of subtracting one channel from another to produce a new product.  These products are generated <strong>on the fly in AWIPS</strong> using the existing channel products from EDEX.</p>
+<p>There currently 10 channel differences that are offered in CAVE:</p>
+<ul>
+<li>Split Window (10.3 - 12.3 &mu;m)</li>
+<li>Split Cloud Top Phase (11.2 - 8.4 &mu;m)</li>
+<li>Night Fog (10.3 - 2.9 &mu;m)</li>
+<li>Day Fog (3.9 - 10.3 &mu;m)</li>
+<li>Split Fire (2.2 - 1.6 &mu;m)</li>
+<li>Split Ozone (9.6 - 10.3 &mu;m)</li>
+<li>Split Water Vapor (6.19 - 7.3 &mu;m)</li>
+<li>Split Snow (1.6 - 0.64 &mu;m)</li>
+<li>Vegetation (0.64 - 0.87 &mu;m)</li>
+<li>Upper Level Info (11.2 - 6.19 &mu;m)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">The rendering of these products uses the <strong>Jep</strong> package in Python, which has specific <a href="http://127.0.0.1:8000/install/install-cave/#method-1-direct-windows-install">install instructions</a> for Windows.</p>
+</div>
+<hr />
+<h2 id="derived-products">Derived Products<a class="headerlink" href="#derived-products" title="Permanent link"></a></h2>
+<p>Derived products are also known as <strong>Level 2+</strong> products.  Currently there are only derived products from GOES East available in AWIPS. Each sector has a different set of products available. To find out some more information on some of the products please the <a href="http://rammb.cira.colostate.edu/training/visit/quick_guides/"><strong>Quick Guides</strong></a> compiled by CIRA.</p>
+<div class="admonition note">
+<p class="admonition-title">These may not all be available for each sector.</p>
+</div>
+<p>The current products offered in CAVE are listed below and to the right is which GOES East sector they are available for (F=Full Disk, C=CONUS, M=Mesoscale):</p>
+<ul>
+<li>Aerosol Detection - F,C,M</li>
+<li>Aerosol Optical Depth - F,C</li>
+<li>Clear Sky Mask - F,C,M</li>
+<li>Cloud Optical Depth - F,C</li>
+<li>Cloud Particle Size -F,C,M</li>
+<li>Cloud Top Height -F,C,M</li>
+<li>Cloud Top Phase -F,C,M</li>
+<li>Cloud Top Pressure -F,C</li>
+<li>Cloud Top Temperature - F,M</li>
+<li>Derived CAPE - F,C,M</li>
+<li>Derived K-Index - F,C,M</li>
+<li>Derived Lifted Index - F,C,M</li>
+<li>Derived Showalter Index - F,C,M</li>
+<li>Derived Total Totals - F,C,M</li>
+<li>Fire Area - F,C</li>
+<li>Fire Power - F,C</li>
+<li>Fire Temperature - F,C</li>
+<li>Instrument Flight Rule (IFR) Probability - C</li>
+<li>Low IFR Probability - C</li>
+<li>Marginal Visual Flight Rules (MVFR) Probability - C</li>
+<li>Cloud Thickness - C</li>
+<li>Land Skin Temperature - F,C,M</li>
+<li>RR/QPE - F</li>
+<li>Sea Surface Temperature - F</li>
+<li>Total Precip Water - F,C,M</li>
+</ul>
+<hr />
+<h2 id="geostationary-lightning-mapper-glm">Geostationary Lightning Mapper (GLM)<a class="headerlink" href="#geostationary-lightning-mapper-glm" title="Permanent link"></a></h2>
+<p>Dr. Eric Bruning at Texas Tech has taken the raw GLM data and coded up some new gridded products that can be ingested and displayed in AWIPS.</p>
+<ul>
+<li>Minimum Flash Area</li>
+<li>Average Flash Area</li>
+<li>Flash Extent Density</li>
+<li>Group Extent Density</li>
+<li>Total Optical Energy</li>
+</ul>
+<p>GLM data are located in the menu structure: <strong>Satellite</strong> &gt; <strong>[SECTOR]</strong> &gt; <strong>GLM Products</strong>. You can also access the data from  <strong>Surface</strong> &gt; <strong>GLM - Geostationary Lightning Mapper</strong> submenus.</p>
+<p><img alt="Satellite GLM Menu" src="../../images/goes-GLMMenu.png" /></p>
+<p><img alt="Surface GLM Menu" src="../../images/goes-GLMMenu2.png" /></p>
+<hr />
+<h2 id="derived-motion-winds">Derived Motion Winds<a class="headerlink" href="#derived-motion-winds" title="Permanent link"></a></h2>
+<p>Derived Motion Wind Vectors are produced using sequential ABI images and can provide information about winds at different levels. The wind vectors are computed using both visible and infrared imagery. Winds can be plotted by different pressure layers or individual channels. More information can be found <a href="http://cimss.ssec.wisc.edu/goes/OCLOFactSheetPDFs/ABIQuickGuide_BaselineDerivedMotionWinds.pdf">here</a>. Below is an image of the winds at different pressure layers.</p>
+<p><img alt="" src="../../images/dmw.png" /></p>
+<hr />
+<h2 id="vertical-temperature-and-moisture-profile">Vertical Temperature and Moisture Profile<a class="headerlink" href="#vertical-temperature-and-moisture-profile" title="Permanent link"></a></h2>
+<p>Vertical Temperature and Moisture profiles are available in AWIPS. Similar to NUCAPS, when loaded in CAVE, a circle is displayed for each location that has a vertical profile available. When clicking on the circle, NSHARP will open with the vertical temperature and moisture profile. These profiles are GFS data that have been adjusted based on the satellite observations. More information can be found <a href="https://rammb.cira.colostate.edu/training/visit/quick_guides/QuickGuide_GOES-R_Legacy_Temperature_Moisture%20Profiles.pdf">here</a>.</p>
+<p><img alt="" src="../../images/goes-VertProfileMap.png" /></p>
+<p><img alt="" src="../../images/goes-VertProfileSounding.png" /></p>
+<hr />
+<h2 id="hdf5-data-store">HDF5 Data Store<a class="headerlink" href="#hdf5-data-store" title="Permanent link"></a></h2>
+<p>Decoded GOES satellite data are stored in <code>/awips2/edex/data/hdf5/satellite/</code> under sector subdirectories:</p>
+<pre><code>drwxr-xr-x  awips   fxalpha 4096    AKREGI
+drwxr-xr-x  awips   fxalpha 4096    Antarctic
+drwxr-xr-x  awips   fxalpha 4096    Arctic
+drwxr-xr-x  awips   fxalpha 4096    AREA0600
+drwxr-xr-x  awips   fxalpha 4096    AREA0700
+drwxr-xr-x  awips   fxalpha 4096    AREA3100
+drwxr-xr-x  awips   fxalpha 4096    AREA3101
+drwxr-xr-x  awips   fxalpha 12288   ECONUS
+drwxr-xr-x  awips   fxalpha 4096    EFD
+drwxr-xr-x  awips   fxalpha 4096    EMESO-1
+drwxr-xr-x  awips   fxalpha 4096    EMESO-2
+drwxr-xr-x  awips   fxalpha 4096    HIREGI
+drwxr-xr-x  awips   fxalpha 4096    NEXRCOMP
+drwxr-xr-x  awips   fxalpha 4096    PRREGI
+drwxr-xr-x  awips   fxalpha 4096    WCONUS
+drwxr-xr-x  awips   fxalpha 4096    WFD
+drwxr-xr-x  awips   fxalpha 4096    WMESO-1
+drwxr-xr-x  awips   fxalpha 4096    WMESO-2
+</code></pre>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="cave/warngen/" title="WarnGen Walkthrough" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                WarnGen Walkthrough
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="cave/d2d-gis-shapefiles/" title="GIS and Shapefiles" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                GIS and Shapefiles
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2022 Unidata Program Center.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://www.unidata.ucar.edu/software/awips2" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/Unidata/awips2" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/Unidata" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://facebook.com/Unidata" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-eaeb7b21e3.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

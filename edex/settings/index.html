@@ -1,0 +1,1065 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for all things AWIPS.">
+      
+      
+        <link rel="canonical" href="http://unidata.github.io/awips2/edex/settings/">
+      
+      
+        <meta name="author" content="support-awips@unidata.ucar.edu">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-unidata-2.0.3">
+    
+    
+      
+        <title>EDEX Settings - Unidata AWIPS User Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-37fa87ea8f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-624922a329.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  
+    <a href="../..">
+      <div class="background-logo" style="background-image:url('../../images/cave.png');background-repeat:no-repeat;height:107px">
+    
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-header-nav__button md-logo">
+          
+            
+              <img src="../../images/home.png" width="24" height="24">
+            
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  EDEX User Manual
+                </span>
+              
+            
+            
+              EDEX Settings
+            
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-nav__button md-logo">
+      
+        
+          <img src="../../images/home.png">
+        
+      
+    </a>
+    Unidata AWIPS User Manual
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-cave/" title="Install CAVE" class="md-nav__link">
+      Install CAVE
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-edex/" title="Install EDEX" class="md-nav__link">
+      Install EDEX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/common-problems/" title="Common Problems" class="md-nav__link">
+      Common Problems
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      CAVE User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        CAVE User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-perspective/" title="D2D Perspective" class="md-nav__link">
+      D2D Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/maps-views-projections/" title="Maps, Views, Projections" class="md-nav__link">
+      Maps, Views, Projections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/bundles-and-procedures/" title="Displays and Procedures" class="md-nav__link">
+      Displays and Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/localization-perspective/" title="Localization Perspective" class="md-nav__link">
+      Localization Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/nsharp/" title="NSHARP" class="md-nav__link">
+      NSHARP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/warngen/" title="WarnGen Walkthrough" class="md-nav__link">
+      WarnGen Walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/goes-16-17-satellite/" title="GOES 16/17" class="md-nav__link">
+      GOES 16/17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-gis-shapefiles/" title="GIS and Shapefiles" class="md-nav__link">
+      GIS and Shapefiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-gridded-models/" title="Volume Browser" class="md-nav__link">
+      Volume Browser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-tools/" title="Display Tools" class="md-nav__link">
+      Display Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-radar-tools/" title="Radar Tools" class="md-nav__link">
+      Radar Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-edit-menus/" title="Editing Menus" class="md-nav__link">
+      Editing Menus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/cave-localization/" title="Change Localization" class="md-nav__link">
+      Change Localization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/import-export/" title="Import/Export" class="md-nav__link">
+      Import/Export
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      EDEX User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        EDEX User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install/start-edex/" title="EDEX Basic Commands" class="md-nav__link">
+      EDEX Basic Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        EDEX Settings
+      </label>
+    
+    <a href="./" title="EDEX Settings" class="md-nav__link md-nav__link--active">
+      EDEX Settings
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plugin-configuration" title="Plugin Configuration" class="md-nav__link">
+    Plugin Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingest-modes" title="Ingest Modes" class="md-nav__link">
+    Ingest Modes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jvm-memory" title="JVM Memory" class="md-nav__link">
+    JVM Memory
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../distributed-computing/" title="Distributed EDEX" class="md-nav__link">
+      Distributed EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edex-ingest-docker-container/" title="Docker EDEX" class="md-nav__link">
+      Docker EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ldm/" title="LDM Feeds" class="md-nav__link">
+      LDM Feeds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-distribution-files/" title="Data Distribution Files" class="md-nav__link">
+      Data Distribution Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-grid/" title="Ingest a New Grid" class="md-nav__link">
+      Ingest a New Grid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-purge/" title="Purging and Retention" class="md-nav__link">
+      Purging and Retention
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edex-users/" title="Monitor Users" class="md-nav__link">
+      Monitor Users
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-plugins/" title="Data Plugins" class="md-nav__link">
+      Data Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-studies/" title="Archive Case Studies" class="md-nav__link">
+      Archive Case Studies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../python/overview/" title="Python-AWIPS" class="md-nav__link">
+      Python-AWIPS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/educational-resources/" title="Educational Resources" class="md-nav__link">
+      Educational Resources
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../dev/awips-development-environment/" title="Development" class="md-nav__link">
+      Development
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-grid-parameters/" title="AWIPS Grid Parameters" class="md-nav__link">
+      AWIPS Grid Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/maps-database/" title="Maps Database" class="md-nav__link">
+      Maps Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-acronyms/" title="Acronyms and Abbreviations" class="md-nav__link">
+      Acronyms and Abbreviations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-wsr88d/" title="WSR-88D Product Table" class="md-nav__link">
+      WSR-88D Product Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/cave-keyboard-shortcuts/" title="Keyboard Shortcuts" class="md-nav__link">
+      Keyboard Shortcuts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/cave_d2d/" title="Raytheon: CAVE User's Manual" class="md-nav__link">
+      Raytheon: CAVE User's Manual
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/smm/" title="Raytheon: AWIPS System Manager's Manual" class="md-nav__link">
+      Raytheon: AWIPS System Manager's Manual
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plugin-configuration" title="Plugin Configuration" class="md-nav__link">
+    Plugin Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingest-modes" title="Ingest Modes" class="md-nav__link">
+    Ingest Modes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jvm-memory" title="JVM Memory" class="md-nav__link">
+    JVM Memory
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Unidata/awips2/edit/unidata_18.2.1/docs/edex/settings.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="edex-settings">EDEX Settings<a class="headerlink" href="#edex-settings" title="Permanent link"></a></h1>
+<h2 id="plugin-configuration">Plugin Configuration<a class="headerlink" href="#plugin-configuration" title="Permanent link"></a></h2>
+<p>The directory <strong>/awips2/edex/conf/resources</strong> contains configuration text files for specific plugins, which allow for user-defined values which are read by AWIPS plugins on EDEX start:</p>
+<pre><code>acarssounding.properties
+autobldsrv.properties
+com.raytheon.edex.plugin.gfe.properties
+com.raytheon.edex.text.properties
+com.raytheon.uf.common.registry.ebxml.properties
+com.raytheon.uf.edex.archive.cron.properties
+com.raytheon.uf.edex.database.properties
+com.raytheon.uf.edex.registry.ebxml.properties
+distribution.properties
+edex-localization-http.properties
+edex-requestsrv.properties
+edex-uengine.properties
+eventBus.properties
+ftp.properties
+goesr.properties
+grib.properties
+maintenance.properties
+proxy.properties
+purge.properties
+quartz.properties
+radar.properties
+stats.properties
+textdbsrv.properties
+warning.properties
+</code></pre>
+<p>Look at <strong>purge.properties</strong> for example:</p>
+<pre><code># Master switch to enable and disable purging
+purge.enabled=true
+
+# Interval at which the purge job kicks off
+purge.cron=0+0/15+*+*+*+?
+
+# Interval at which the outgoing files are purged
+purge.outgoing.cron=0+30+*+*+*+?
+
+# Interval at which the logs are purged
+purge.logs.cron=0+30+0+*+*+?
+
+# Interval at which hdf5 orphans are purged
+purge.orphan.period=24h
+
+# Number of days older than the earliest known data to delete.
+purge.orphan.buffer=7
+...
+</code></pre>
+<p>In <strong>grib.properties</strong>, <strong>goesr.properties</strong>, and <strong>radar.properties</strong> you can adjust the number of decoder threads for each plugin.</p>
+<pre><code>cat radar.properties
+
+# Number threads for radar products ingested from the SBN
+radar-decode.sbn.threads=5
+</code></pre>
+<hr />
+<h2 id="ingest-modes">Ingest Modes<a class="headerlink" href="#ingest-modes" title="Permanent link"></a></h2>
+<p>By default, EDEX starts three "modes": <em>ingest</em>, <em>ingestGrib</em>, and <em>request</em> (each as its own JVM).</p>
+<p>The file <strong>/awips2/edex/conf/modes/modes.xml</strong> contains all available mode definitions, including some specific modes for Hydro Server Applications, ebXML Registries, Data Delivery, and more.</p>
+<p>EDEX services are registered through spring, and by including or excluding specific spring files (usually by datatype plugin name) we can finely customize EDEX startup. </p>
+<p>In <strong>/awips2/edex/conf/modes/modes.xml</strong> there are a number of unused plugin decoders excluded because the data are not available outside of the SBN:</p>
+<pre><code>...
+&lt;mode name="ingest"&gt;
+        &lt;exclude&gt;.*request.*&lt;/exclude&gt;
+        &lt;exclude&gt;edex-security.xml&lt;/exclude&gt;
+        &lt;exclude&gt;ebxml.*\.xml&lt;/exclude&gt;
+        &lt;exclude&gt;grib-decode.xml&lt;/exclude&gt;
+        &lt;exclude&gt;grid-staticdata-process.xml&lt;/exclude&gt;
+        &lt;exclude&gt;.*(dpa|taf|nctext).*&lt;/exclude&gt;
+        &lt;exclude&gt;webservices.xml&lt;/exclude&gt;
+        &lt;exclude&gt;.*datadelivery.*&lt;/exclude&gt;
+        &lt;exclude&gt;.*bandwidth.*&lt;/exclude&gt;
+        &lt;exclude&gt;.*sbn-simulator.*&lt;/exclude&gt;
+        &lt;exclude&gt;hydrodualpol-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;grid-metadata.xml&lt;/exclude&gt;
+        &lt;exclude&gt;.*ogc.*&lt;/exclude&gt;
+        &lt;exclude&gt;obs-ingest-metarshef.xml&lt;/exclude&gt;
+        &lt;exclude&gt;ffmp-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;scan-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;cwat-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;fog-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;vil-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;preciprate-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;qpf-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;fssobs-ingest.xml&lt;/exclude&gt;
+        &lt;exclude&gt;cpgsrv-spring.xml&lt;/exclude&gt;
+&lt;/mode&gt;
+...
+</code></pre>
+<p>In this example, request, ebXML, grib plugins, OGC and other plugins are excluded because they are included in their own mode/JVM.</p>
+<blockquote>
+<p><strong>Note</strong>: TAF and NCTEXT plugins are disabled here due to performance issues.</p>
+</blockquote>
+<hr />
+<h2 id="jvm-memory">JVM Memory<a class="headerlink" href="#jvm-memory" title="Permanent link"></a></h2>
+<p>The directory <strong>/awips2/edex/etc/</strong> contains files which define the amount of memory used for each of the three EDEX JVMs (ingest, ingestGrib, request):</p>
+<pre><code>ls -al /awips2/edex/etc/
+-rw-r--r-- 1 awips fxalpha 1287 Jul 24 18:41 centralRegistry.sh
+-rw-r--r-- 1 awips fxalpha 1155 Jul 24 18:42 default.sh
+-rw-r--r-- 1 awips fxalpha 1956 Jul 24 18:41 ingestGrib.sh
+-rw-r--r-- 1 awips fxalpha  337 Jul 24 18:36 ingest.sh
+-rw-r--r-- 1 awips fxalpha  848 Jul 24 18:42 profiler.sh
+-rw-r--r-- 1 awips fxalpha 1188 Jul 24 18:41 registry.sh
+-rw-r--r-- 1 awips fxalpha  601 Jul 24 18:36 request.sh
+</code></pre>
+<p>Each file contains the <strong>Xmx</strong> definition for maximum memory:</p>
+<pre><code>...
+export INIT_MEM=512 # in Meg
+export MAX_MEM=4096 # in Meg
+...
+</code></pre>
+<p>After editing these files, you must restart : <code>service edex_camel restart</code>.</p>
+<hr />
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="install/start-edex/" title="EDEX Basic Commands" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                EDEX Basic Commands
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="edex/distributed-computing/" title="Distributed EDEX" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Distributed EDEX
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2022 Unidata Program Center.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://www.unidata.ucar.edu/software/awips2" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/Unidata/awips2" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/Unidata" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://facebook.com/Unidata" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-eaeb7b21e3.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

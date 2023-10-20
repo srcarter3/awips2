@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for all things AWIPS.">
+      
+      
+        <link rel="canonical" href="http://unidata.github.io/awips2/edex/ldm/">
+      
+      
+        <meta name="author" content="support-awips@unidata.ucar.edu">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-unidata-2.0.3">
+    
+    
+      
+        <title>LDM Feeds - Unidata AWIPS User Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-37fa87ea8f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-624922a329.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  
+    <a href="../..">
+      <div class="background-logo" style="background-image:url('../../images/cave.png');background-repeat:no-repeat;height:107px">
+    
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-header-nav__button md-logo">
+          
+            
+              <img src="../../images/home.png" width="24" height="24">
+            
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  EDEX User Manual
+                </span>
+              
+            
+            
+              LDM Feeds
+            
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-nav__button md-logo">
+      
+        
+          <img src="../../images/home.png">
+        
+      
+    </a>
+    Unidata AWIPS User Manual
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-cave/" title="Install CAVE" class="md-nav__link">
+      Install CAVE
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-edex/" title="Install EDEX" class="md-nav__link">
+      Install EDEX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/common-problems/" title="Common Problems" class="md-nav__link">
+      Common Problems
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      CAVE User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        CAVE User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-perspective/" title="D2D Perspective" class="md-nav__link">
+      D2D Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/maps-views-projections/" title="Maps, Views, Projections" class="md-nav__link">
+      Maps, Views, Projections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/bundles-and-procedures/" title="Displays and Procedures" class="md-nav__link">
+      Displays and Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/localization-perspective/" title="Localization Perspective" class="md-nav__link">
+      Localization Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/nsharp/" title="NSHARP" class="md-nav__link">
+      NSHARP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/warngen/" title="WarnGen Walkthrough" class="md-nav__link">
+      WarnGen Walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/goes-16-17-satellite/" title="GOES 16/17" class="md-nav__link">
+      GOES 16/17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-gis-shapefiles/" title="GIS and Shapefiles" class="md-nav__link">
+      GIS and Shapefiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-gridded-models/" title="Volume Browser" class="md-nav__link">
+      Volume Browser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-tools/" title="Display Tools" class="md-nav__link">
+      Display Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-radar-tools/" title="Radar Tools" class="md-nav__link">
+      Radar Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-edit-menus/" title="Editing Menus" class="md-nav__link">
+      Editing Menus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/cave-localization/" title="Change Localization" class="md-nav__link">
+      Change Localization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/import-export/" title="Import/Export" class="md-nav__link">
+      Import/Export
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      EDEX User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        EDEX User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install/start-edex/" title="EDEX Basic Commands" class="md-nav__link">
+      EDEX Basic Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../settings/" title="EDEX Settings" class="md-nav__link">
+      EDEX Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../distributed-computing/" title="Distributed EDEX" class="md-nav__link">
+      Distributed EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edex-ingest-docker-container/" title="Docker EDEX" class="md-nav__link">
+      Docker EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        LDM Feeds
+      </label>
+    
+    <a href="./" title="LDM Feeds" class="md-nav__link md-nav__link--active">
+      LDM Feeds
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-ldm-feeds-for-edex" title="Default LDM Feeds for EDEX" class="md-nav__link">
+    Default LDM Feeds for EDEX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-ldm-feeds" title="Optional LDM Feeds" class="md-nav__link">
+    Optional LDM Feeds
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fnmoc-and-cmc-models" title="FNMOC and CMC models" class="md-nav__link">
+    FNMOC and CMC models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightning-restricted-to-educational-use-with-rebroadcasting-restricted" title="Lightning (restricted to educational use with rebroadcasting restricted)" class="md-nav__link">
+    Lightning (restricted to educational use with rebroadcasting restricted)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fslgsd-experimental-hrrr-sub-hourly" title="FSL/GSD Experimental HRRR (Sub-hourly)" class="md-nav__link">
+    FSL/GSD Experimental HRRR (Sub-hourly)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-the-ldm" title="Restart the LDM" class="md-nav__link">
+    Restart the LDM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-incoming-data-feeds" title="Monitor Incoming Data Feeds" class="md-nav__link">
+    Monitor Incoming Data Feeds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldm-logging" title="LDM Logging" class="md-nav__link">
+    LDM Logging
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-distribution-files/" title="Data Distribution Files" class="md-nav__link">
+      Data Distribution Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-grid/" title="Ingest a New Grid" class="md-nav__link">
+      Ingest a New Grid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-purge/" title="Purging and Retention" class="md-nav__link">
+      Purging and Retention
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edex-users/" title="Monitor Users" class="md-nav__link">
+      Monitor Users
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-plugins/" title="Data Plugins" class="md-nav__link">
+      Data Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-studies/" title="Archive Case Studies" class="md-nav__link">
+      Archive Case Studies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../python/overview/" title="Python-AWIPS" class="md-nav__link">
+      Python-AWIPS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/educational-resources/" title="Educational Resources" class="md-nav__link">
+      Educational Resources
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../dev/awips-development-environment/" title="Development" class="md-nav__link">
+      Development
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-grid-parameters/" title="AWIPS Grid Parameters" class="md-nav__link">
+      AWIPS Grid Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/maps-database/" title="Maps Database" class="md-nav__link">
+      Maps Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-acronyms/" title="Acronyms and Abbreviations" class="md-nav__link">
+      Acronyms and Abbreviations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-wsr88d/" title="WSR-88D Product Table" class="md-nav__link">
+      WSR-88D Product Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/cave-keyboard-shortcuts/" title="Keyboard Shortcuts" class="md-nav__link">
+      Keyboard Shortcuts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/cave_d2d/" title="Raytheon: CAVE User's Manual" class="md-nav__link">
+      Raytheon: CAVE User's Manual
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/smm/" title="Raytheon: AWIPS System Manager's Manual" class="md-nav__link">
+      Raytheon: AWIPS System Manager's Manual
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-ldm-feeds-for-edex" title="Default LDM Feeds for EDEX" class="md-nav__link">
+    Default LDM Feeds for EDEX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-ldm-feeds" title="Optional LDM Feeds" class="md-nav__link">
+    Optional LDM Feeds
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fnmoc-and-cmc-models" title="FNMOC and CMC models" class="md-nav__link">
+    FNMOC and CMC models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightning-restricted-to-educational-use-with-rebroadcasting-restricted" title="Lightning (restricted to educational use with rebroadcasting restricted)" class="md-nav__link">
+    Lightning (restricted to educational use with rebroadcasting restricted)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fslgsd-experimental-hrrr-sub-hourly" title="FSL/GSD Experimental HRRR (Sub-hourly)" class="md-nav__link">
+    FSL/GSD Experimental HRRR (Sub-hourly)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-the-ldm" title="Restart the LDM" class="md-nav__link">
+    Restart the LDM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-incoming-data-feeds" title="Monitor Incoming Data Feeds" class="md-nav__link">
+    Monitor Incoming Data Feeds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldm-logging" title="LDM Logging" class="md-nav__link">
+    LDM Logging
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Unidata/awips2/edit/unidata_18.2.1/docs/edex/ldm.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="ldm-feeds">LDM Feeds<a class="headerlink" href="#ldm-feeds" title="Permanent link"></a></h1>
+<h2 id="default-ldm-feeds-for-edex">Default LDM Feeds for EDEX<a class="headerlink" href="#default-ldm-feeds-for-edex" title="Permanent link"></a></h2>
+<p>Data feeds are defined by the <strong>ldmd.conf</strong> file in <code>/awips2/ldm/etc/ldmd.conf</code>.  The default feeds that come "turned on" with our EDEX are the following:</p>
+<pre><code>REQUEST FNEXRAD ".*" idd.unidata.ucar.edu # MRMS - Unidata feed via NCEP
+REQUEST NEXRAD3 ".*" idd.unidata.ucar.edu # Radar Level3 
+REQUEST HDS "^SDUS6.*" idd.unidata.ucar.edu # Radar Level3 - specific files
+REQUEST WMO ".*" idd.unidata.ucar.edu                   # WMO Feedtype includes HDS|IDS|DDPLUS
+REQUEST UNIWISC|NIMAGE ".*" idd.unidata.ucar.edu        # AREA/GINI and GOES Products
+REQUEST DIFAX "GLM" idd.unidata.ucar.edu                # GOES GLM Gridded Product (Texas Tech-Eric Bruning)
+REQUEST NOTHER "^TI[A-W]... KNES" idd.unidata.ucar.edu  # VIIRS and GOES CMI via SBN
+REQUEST NOTHER "^IXT[WXY]01" idd.unidata.ucar.edu       #Special SBN GOES Derived products-different WMO (COD, CPS, CTP)
+REQUEST NGRID ".*" idd.unidata.ucar.edu
+REQUEST CONDUIT "nam" idd.unidata.ucar.edu              # NAM12
+REQUEST CONDUIT "pgrb2" idd.unidata.ucar.edu            # GFS
+</code></pre>
+<hr />
+<h2 id="optional-ldm-feeds">Optional LDM Feeds<a class="headerlink" href="#optional-ldm-feeds" title="Permanent link"></a></h2>
+<p>Some additional feeds are included but commented out using '#'.  To activate the feed, simply remove the #, save the file, and <a href="#restart-the-ldm">restart the LDM</a>.</p>
+<h3 id="fnmoc-and-cmc-models">FNMOC and CMC models<a class="headerlink" href="#fnmoc-and-cmc-models" title="Permanent link"></a></h3>
+<pre><code>REQUEST FNMOC ".*" idd.unidata.ucar.edu
+REQUEST CMC ".*" idd.unidata.ucar.edu
+</code></pre>
+<h3 id="lightning-restricted-to-educational-use-with-rebroadcasting-restricted">Lightning (restricted to educational use with rebroadcasting restricted)<a class="headerlink" href="#lightning-restricted-to-educational-use-with-rebroadcasting-restricted" title="Permanent link"></a></h3>
+<pre><code>REQUEST        LIGHTNING       ".*"    striker2.atmos.albany.edu
+REQUEST        LIGHTNING       ".*"    idd.unidata.ucar.edu
+</code></pre>
+<h3 id="fslgsd-experimental-hrrr-sub-hourly">FSL/GSD Experimental HRRR (Sub-hourly)<a class="headerlink" href="#fslgsd-experimental-hrrr-sub-hourly" title="Permanent link"></a></h3>
+<pre><code>REQUEST FSL2 "^GRIB2.FSL.HRRR" hrrr.unidata.ucar.edu
+</code></pre>
+<hr />
+<h2 id="restart-the-ldm">Restart the LDM<a class="headerlink" href="#restart-the-ldm" title="Permanent link"></a></h2>
+<p>Use the following commands to restart the LDM:</p>
+<pre><code>sudo service edex_ldm restart
+
+ldmadmin restart
+</code></pre>
+<hr />
+<h2 id="monitor-incoming-data-feeds">Monitor Incoming Data Feeds<a class="headerlink" href="#monitor-incoming-data-feeds" title="Permanent link"></a></h2>
+<p>To watch incoming data in real-time:</p>
+<pre><code>notifyme -vl -
+</code></pre>
+<p>To watch for a specific product and feed and time (360 sec = 6 min):</p>
+<pre><code>notifyme -vl - -h localhost -f NEXRAD3 -p DHR -o 360
+</code></pre>
+<p>To watch the same on a remote queue:</p>
+<pre><code>notifyme -vl - -h idd.unidata.ucar.edu -f NEXRAD3 -p DHR -o 360
+</code></pre>
+<hr />
+<h2 id="ldm-logging">LDM Logging<a class="headerlink" href="#ldm-logging" title="Permanent link"></a></h2>
+<p>To open a real-time readout of LDM logging you can run use the <code>edex</code> command.  To exit, press <code>CTRL+C</code>.</p>
+<pre><code>edex log ldm
+
+[edex] EDEX Log Viewer
+
+ :: Viewing /awips2/ldm/logs/ldmd.log. Press CTRL+C to exit
+
+Aug 26 15:05:10 edextest pqact[5811] NOTE: Filed in "/awips2/data_store/grid/HRRR/HRRR_CONUS_2p5km_201608262000_F006_MXUPHL01-21387192.grib2":     406227 20160826210510.477   NGRID 21387192  YZCG86 KWBY 262000 !grib2/ncep/HRRR/#255/201608262000F006/MXUPHL01/5000-2000 m HGHT
+Aug 26 15:05:11 edextest edexBridge[5812] NOTE: Sent 2 messages (0 at the end of the queue, 2 normally).
+Aug 26 15:05:11 edextest pqact[5811] NOTE: Filed in "/awips2/data_store/grid/HRRR/HRRR_CONUS_2p5km_201608262000_F006_CICEP-21387200.grib2":     369464 20160826210511.484   NGRID 21387200  YMCG98 KWBY 262000 !grib2/ncep/HRRR/#255/201608262000F006/CICEP/0 - NONE
+Aug 26 15:05:12 edextest edexBridge[5812] NOTE: Sent 9 messages (0 at the end of the queue, 9 normally).
+Aug 26 15:05:12 edextest pqact[5811] NOTE: Filed in "/awips2/data_store/grid/HRRR/HRRR_CONUS_2p5km_201608262000_F006_LTNG-21387205.grib2":     482800 20160826210512.254   NGRID 21387205  YZCG98 KWBY 262000 !grib2/ncep/HRRR/#255/201608262000F006/LTNG/0 - EATM
+Aug 26 15:05:13 edextest edexBridge[5812] NOTE: Sent 1 messages (0 at the end of the queue, 1 normally).
+</code></pre>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="edex/edex-ingest-docker-container/" title="Docker EDEX" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Docker EDEX
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="edex/data-distribution-files/" title="Data Distribution Files" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Data Distribution Files
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2022 Unidata Program Center.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://www.unidata.ucar.edu/software/awips2" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/Unidata/awips2" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/Unidata" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://facebook.com/Unidata" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-eaeb7b21e3.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1225 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for all things AWIPS.">
+      
+      
+        <link rel="canonical" href="http://unidata.github.io/awips2/edex/data-distribution-files/">
+      
+      
+        <meta name="author" content="support-awips@unidata.ucar.edu">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-unidata-2.0.3">
+    
+    
+      
+        <title>Data Distribution Files - Unidata AWIPS User Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-37fa87ea8f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-624922a329.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  
+    <a href="../..">
+      <div class="background-logo" style="background-image:url('../../images/cave.png');background-repeat:no-repeat;height:107px">
+    
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-header-nav__button md-logo">
+          
+            
+              <img src="../../images/home.png" width="24" height="24">
+            
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  EDEX User Manual
+                </span>
+              
+            
+            
+              Data Distribution Files
+            
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <a href="http://unidata.github.io/awips2/" title="Unidata AWIPS User Manual" class="md-nav__button md-logo">
+      
+        
+          <img src="../../images/home.png">
+        
+      
+    </a>
+    Unidata AWIPS User Manual
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Unidata/awips2" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-cave/" title="Install CAVE" class="md-nav__link">
+      Install CAVE
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/install-edex/" title="Install EDEX" class="md-nav__link">
+      Install EDEX
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/common-problems/" title="Common Problems" class="md-nav__link">
+      Common Problems
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      CAVE User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        CAVE User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-perspective/" title="D2D Perspective" class="md-nav__link">
+      D2D Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/maps-views-projections/" title="Maps, Views, Projections" class="md-nav__link">
+      Maps, Views, Projections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/bundles-and-procedures/" title="Displays and Procedures" class="md-nav__link">
+      Displays and Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/localization-perspective/" title="Localization Perspective" class="md-nav__link">
+      Localization Perspective
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/nsharp/" title="NSHARP" class="md-nav__link">
+      NSHARP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/warngen/" title="WarnGen Walkthrough" class="md-nav__link">
+      WarnGen Walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/goes-16-17-satellite/" title="GOES 16/17" class="md-nav__link">
+      GOES 16/17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-gis-shapefiles/" title="GIS and Shapefiles" class="md-nav__link">
+      GIS and Shapefiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-gridded-models/" title="Volume Browser" class="md-nav__link">
+      Volume Browser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-tools/" title="Display Tools" class="md-nav__link">
+      Display Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-radar-tools/" title="Radar Tools" class="md-nav__link">
+      Radar Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/d2d-edit-menus/" title="Editing Menus" class="md-nav__link">
+      Editing Menus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/cave-localization/" title="Change Localization" class="md-nav__link">
+      Change Localization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/import-export/" title="Import/Export" class="md-nav__link">
+      Import/Export
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      EDEX User Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        EDEX User Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../install/start-edex/" title="EDEX Basic Commands" class="md-nav__link">
+      EDEX Basic Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../settings/" title="EDEX Settings" class="md-nav__link">
+      EDEX Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../distributed-computing/" title="Distributed EDEX" class="md-nav__link">
+      Distributed EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edex-ingest-docker-container/" title="Docker EDEX" class="md-nav__link">
+      Docker EDEX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ldm/" title="LDM Feeds" class="md-nav__link">
+      LDM Feeds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Data Distribution Files
+      </label>
+    
+    <a href="./" title="Data Distribution Files" class="md-nav__link md-nav__link--active">
+      Data Distribution Files
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-site-override" title="Creating a Site Override" class="md-nav__link">
+    Creating a Site Override
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-regex-to-the-satellite-data-distribution-file" title="Adding a REGEX to the Satellite Data Distribution File" class="md-nav__link">
+    Adding a REGEX to the Satellite Data Distribution File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-an-edex-data-distribution-file" title="Editing an EDEX Data Distribution File" class="md-nav__link">
+    Editing an EDEX Data Distribution File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#surface-obs" title="Surface Obs" class="md-nav__link">
+    Surface Obs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-data" title="Text Data" class="md-nav__link">
+    Text Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grib-data" title="Grib Data" class="md-nav__link">
+    Grib Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtional-information" title="Addtional Information" class="md-nav__link">
+    Addtional Information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-grid/" title="Ingest a New Grid" class="md-nav__link">
+      Ingest a New Grid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-purge/" title="Purging and Retention" class="md-nav__link">
+      Purging and Retention
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../edex-users/" title="Monitor Users" class="md-nav__link">
+      Monitor Users
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-plugins/" title="Data Plugins" class="md-nav__link">
+      Data Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-studies/" title="Archive Case Studies" class="md-nav__link">
+      Archive Case Studies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../python/overview/" title="Python-AWIPS" class="md-nav__link">
+      Python-AWIPS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/educational-resources/" title="Educational Resources" class="md-nav__link">
+      Educational Resources
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../dev/awips-development-environment/" title="Development" class="md-nav__link">
+      Development
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-grid-parameters/" title="AWIPS Grid Parameters" class="md-nav__link">
+      AWIPS Grid Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/maps-database/" title="Maps Database" class="md-nav__link">
+      Maps Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-acronyms/" title="Acronyms and Abbreviations" class="md-nav__link">
+      Acronyms and Abbreviations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../appendix/appendix-wsr88d/" title="WSR-88D Product Table" class="md-nav__link">
+      WSR-88D Product Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cave/cave-keyboard-shortcuts/" title="Keyboard Shortcuts" class="md-nav__link">
+      Keyboard Shortcuts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/cave_d2d/" title="Raytheon: CAVE User's Manual" class="md-nav__link">
+      Raytheon: CAVE User's Manual
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../raytheon/smm/" title="Raytheon: AWIPS System Manager's Manual" class="md-nav__link">
+      Raytheon: AWIPS System Manager's Manual
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-site-override" title="Creating a Site Override" class="md-nav__link">
+    Creating a Site Override
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-regex-to-the-satellite-data-distribution-file" title="Adding a REGEX to the Satellite Data Distribution File" class="md-nav__link">
+    Adding a REGEX to the Satellite Data Distribution File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-an-edex-data-distribution-file" title="Editing an EDEX Data Distribution File" class="md-nav__link">
+    Editing an EDEX Data Distribution File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#surface-obs" title="Surface Obs" class="md-nav__link">
+    Surface Obs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-data" title="Text Data" class="md-nav__link">
+    Text Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grib-data" title="Grib Data" class="md-nav__link">
+    Grib Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addtional-information" title="Addtional Information" class="md-nav__link">
+    Addtional Information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Unidata/awips2/edit/unidata_18.2.1/docs/edex/data-distribution-files.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="data-distribution-files">Data Distribution Files<a class="headerlink" href="#data-distribution-files" title="Permanent link"></a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"></a></h2>
+<p>EDEX uses <strong>distribution files</strong> to alert the appropriate decoding plug-in that new data has been recieved.  These files do so by use of XML and regular expressions.  If the WMO header, or file name*, matches a regular expression listed in a distribution XML, then EDEX will put a message into the QPID queue for its corresponding decoder to recognize and process.  It is worth noting that more than one distribution file can recognize a single peice of data and notify their decoders to act.</p>
+<blockquote>
+<p>*Sometimes the distribution file will not look at the filename.  If this file is coming in through the LDM using a proper FILE action, then the it is possible the distribution file will only look at the header and not the filename.  If the file is ingested using the <em>manual</em> endpoint (/awips2/data_store/ingest/), then this behaviour could be different.</p>
+</blockquote>
+<p>If a piece of data <strong>does not</strong> match any distribution XML, EDEX will:</p>
+<ul>
+<li>
+<p>Create an entry in <code>/awips2/edex/logs/edex-ingest-unrecognized-files-yyyymmdd.log</code></p>
+</li>
+<li>
+<p>Skip processing of the unrecognized file.</p>
+</li>
+</ul>
+<p>Distribution files are stored in the <strong>common_static</strong> branch of the <em>Localization Store</em> (series of directories that exist in <strong>/awips2/edex/data/utility/</strong>), and a list of available files can be found in the base-level directory.  The base directory is: <code>/awips2/edex/data/utility/common_static/base/distribution/</code>.</p>
+<p>For each plug-in, the distribution file is named <code>[data-type].xml</code>.  For example, the distribution file for radar data is <code>radar.xml</code>. The distribution files follow the AWIPS base/site localization pattern: </p>
+<pre><code>[root@edex]# cd /awips2/edex/data/utility/common_static/base/distribution
+[root@edex distribution]# ls
+acars.xml         goesr.xml            poessounding.xml
+airep.xml         goessounding.xml     profiler.xml
+airmet.xml        grib.xml             radar.xml
+atcf.xml          intlsigmet.xml       redbook.xml
+aww.xml           lsr.xml              satellite.gini.xml
+...
+</code></pre>
+<hr />
+<h2 id="creating-a-site-override">Creating a Site Override<a class="headerlink" href="#creating-a-site-override" title="Permanent link"></a></h2>
+<ul>
+<li>
+<p><em>Base</em> files are located in <strong>/awips2/edex/data/utility/common_static/base/distribution/</strong></p>
+</li>
+<li>
+<p><em>Site</em> override distribution files are located in <strong>/awips2/edex/data/utility/common_static/<em>site/XXX</em>/distribution/</strong>, where <strong><em>XXX</em></strong> is the site identifier.</p>
+</li>
+</ul>
+<p>Note that site-level files override the base files; as a result, local modifications to distribution files must be made as follows:</p>
+<ol>
+<li>
+<p>The base distribution file must be copied from <strong>/awips2/edex/data/utility/common_static/base/distribution</strong> to <strong>/awips2/edex/data/utility/common_static/site/XXX/distribution</strong></p>
+</li>
+<li>
+<p>The local modification must be made to the file in <strong>/awips2/edex/data/utility/common_static/site/XXX/distribution</strong></p>
+</li>
+</ol>
+<p>The basic structure of the distribution file is:</p>
+<pre><code>&lt;requestPatterns xmlns:ns2="group"&gt;
+    &lt;regex&gt;[pattern]&lt;/regex&gt;
+    &lt;regex&gt;[pattern]&lt;/regex&gt;
+&lt;/requestPatterns&gt;
+</code></pre>
+<p>In each <strong><regex></regex> </strong>tag, <strong><em>[pattern]</em></strong> is replaced with a regular expression that will match either the filename or the WMO header of the raw data. Only data that matches a pattern in the distribution file will be processed.</p>
+<p>The contents of the base version of the radar distribution file:</p>
+<pre><code>[root@edex]# cd /awips2/edex/data/utility/common_static/base/distribution/
+[root@edex]# tail -4 radar.xml
+
+&lt;requestPatterns &gt;
+    &lt;regex&gt;^SDUS[234578]. .*&lt;/regex&gt;
+    &lt;regex&gt;^Level3.*&lt;/regex&gt;
+&lt;/requestPatterns&gt;
+</code></pre>
+<p>Looking at the base radar.xml distribution file in this example, there are two regular expressions.  The first regular expression matches the standard WMO ID of radar products.   Using edexBridge the LDM will place a message in the <strong>external.dropbox</strong> QPID queue, indicating a radar product has arrived.  EDEX will then take the message containing the radar WMO ID (which comes from the file header) and compare it against the regular expressions in radar.xml.  If a match is found, EDEX places a message in the QPID queue Ingest.radar.  The radar decoder will then consume the message and process the radar data accordingly. </p>
+<hr />
+<h2 id="adding-a-regex-to-the-satellite-data-distribution-file">Adding a REGEX to the Satellite Data Distribution File<a class="headerlink" href="#adding-a-regex-to-the-satellite-data-distribution-file" title="Permanent link"></a></h2>
+<p>As a quick example, suppose we have a local data source for satellite imagery that does not have a WMO header; also suppose that the data source writes to files whose names start with <strong>LOCAL.sat</strong>.</p>
+<p>To add this locally produced satellite data file to the EDEX distribution; perform the following steps.</p>
+<ol>
+<li>
+<p>Copy the base version of <strong>satellite.gini.xml</strong> from the base distribution directory <strong>/awips2/edex/data/utility/common_static/base/distribution</strong> into the site distribution directory <strong>/awips2/edex/data/utility/common_static/site/XXX/distribution</strong></p>
+</li>
+<li>
+<p>Edit the site version of <strong>satellite.gini.xml</strong>, adding a new <code>&lt;regex&gt; &lt;/regex&gt;</code> tag immediately below the existing regular expression (<code>&lt;regex&gt; &lt;/regex&gt;</code>) tag. The contents of the tag will be <strong>^LOCAL.sat</strong>. The final result will be:</p>
+</li>
+</ol>
+<!---
+Note: this next code block is formatted using html so that one of the lines of code can be bolded for emphasis.  This is why &lt; and &gt; are used instead of < and >.
+-->
+<pre>
+  &lt;requestPatterns xmlns:ns2="group"&gt;
+      &lt;regex&gt;TI[CGT]... ....&lt;/regex&gt;
+      &lt;regex&gt;rad/NEXRCOMP&lt;/regex&gt;
+      &lt;regex&gt;.\*.gini.\*&lt;/regex&gt;
+      <b>&lt;regex&gt;^LOCAL.sat.*&lt;/regex&gt;</b>
+  &lt;/requestPatterns&gt;
+</pre>
+
+<ol>
+<li>Save the file and exit the editor. EDEX will automatically pick up the new distribution pattern.</li>
+</ol>
+<p>Raw files are written to subdirectories in  <strong>/awips2/data_store/</strong>, and a message is sent via QPID to the EDEX distribution service from the LDM. When a regular expression match is found in a data distribution file, the raw data file is placed in a queue for the matching plugin to decode and process. The distribution files are used to match file headers as well as filenames, which is how files dropped into EDEX's manual endpoint (<strong>/awips2/data_store/ingest/</strong>) are processed.</p>
+<hr />
+<h2 id="editing-an-edex-data-distribution-file">Editing an EDEX Data Distribution File<a class="headerlink" href="#editing-an-edex-data-distribution-file" title="Permanent link"></a></h2>
+<p>Because these files are in the <strong>common/_static</strong> directory, they have to be manually edited using a text editor. You should not edit the base files; rather, as stated above, <a href="#creating-a-site-override">you should copy the base version to your site and then edit the site version</a>. </p>
+<p>The regular expressions in the distribution files do not necessarily need to correspond with the regular expressions in the LDM <strong><em>pqact.conf</em></strong> file.  It is important to note that:</p>
+<ul>
+<li>The regex in the <strong>pqact.conf</strong> file applies to the <em>productID</em> that is passed through the LDM.</li>
+</ul>
+<p>and</p>
+<ul>
+<li>The regex in the <strong>distribution</strong> files (.xml) typically applies to the header in the file.  It can also apply to the filename, if the file is coming through the manual endpoint, or if the data has no header to begin with.</li>
+</ul>
+<p>If patterns exist in <strong><em>pqact.conf</em></strong> but there are no corresponding matching regex expressions in any distribution file, then raw data files will be written to <strong>/awips2/data_store/</strong> but will not be ingested and processed by EDEX. Entries for these non-ingested files would be written to the unrecognized files log in <strong>/awips/edex/logs</strong>.</p>
+<hr />
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link"></a></h2>
+<h3 id="surface-obs">Surface Obs<a class="headerlink" href="#surface-obs" title="Permanent link"></a></h3>
+<p>Its distribution file is located at: <strong>/awips2/edex/data/utility/common_static/base/distribution/obs.xml</strong>:</p>
+<pre><code>&lt;requestPatterns xmlns:ns2="group"&gt;
+  &lt;regex&gt;^S[AP].*&lt;/regex&gt;
+&lt;/requestPatterns&gt;
+</code></pre>
+<p>It will process any file header that starts with <strong>SA</strong> or <strong>SP</strong>, which should match any WMO header that contains METAR data (e.g.<strong>SAUS</strong>, <strong>SPUS</strong>, <strong>SACN</strong>, <strong>SAMX</strong>).</p>
+<hr />
+<h3 id="text-data">Text Data<a class="headerlink" href="#text-data" title="Permanent link"></a></h3>
+<p>Its distribution file is located at <strong>/awips2/edex/data/utility/common_static/base/distribution/text.xml</strong>:</p>
+<pre><code>&lt;requestPatterns&gt;
+  &lt;regex&gt;^[ACFNRUW][A-Z][A-Z0-9]{4} [A-Z0-9]{4}&lt;/regex&gt;
+  &lt;regex&gt;^S[A-CEG-Z].*&lt;/regex&gt;
+  &lt;!-- Only have AFOS mapping for T[BCX] --&gt;
+  &lt;regex&gt;^T[BCX].*&lt;/regex&gt;
+  &lt;regex&gt;^SF[A-OQ-TV-Z].*&lt;/regex&gt;
+  &lt;regex&gt;^SDUS1.*&lt;/regex&gt;
+  &lt;regex&gt;^SDUS4[1-6].*&lt;/regex&gt;
+  &lt;regex&gt;^SDUS9[^7].*&lt;/regex&gt;
+  &lt;regex&gt;^SFU[^S].*&lt;/regex&gt;
+  &lt;regex&gt;^SFUS4[^1].*&lt;/regex&gt;
+  &lt;regex&gt;^SFP[^A].*&lt;/regex&gt;
+  &lt;regex&gt;^SFPA[^4].*&lt;/regex&gt;
+  &lt;regex&gt;^SFPA4[^12].*&lt;/regex&gt;
+  &lt;regex&gt;^BMBB91.*&lt;/regex&gt;
+  &lt;regex&gt;^N[A-Z][A-Z0-9]{4} [A-Z0-9]{4}&lt;/regex&gt;
+  &lt;regex&gt;^F[EHIJKLMQVWX].*&lt;/regex&gt;
+  &lt;regex&gt;wcl_decrypted&lt;/regex&gt;
+  &lt;regex&gt;ecmwf_mos_decrypted&lt;/regex&gt;
+&lt;/requestPatterns&gt;
+</code></pre>
+<p>Processes lots of WM patterns. The second pattern ^S[A-CEG-Z].* matches any header that starts with <strong>S</strong> except for <strong>SD</strong> or <strong>SF</strong>.  This is because it matches A through C (<em>A-C</em>), E, and G through Z (<em>G-Z</em>).  So it also matches the <strong>SA</strong> and <strong>SP</strong> files that the <strong>obs.xml</strong> plugin matches. This means that METARs are processed by both plugins simultaneously.</p>
+<hr />
+<h3 id="grib-data">Grib Data<a class="headerlink" href="#grib-data" title="Permanent link"></a></h3>
+<p>Its distribution file is located at <strong>/awips2/edex/data/utility/common_static/base/distribution/grib.xml</strong>:</p>
+<pre><code>&lt;requestPatterns&gt;
+    &lt;!-- Super Set of all possible WMO grib patterns --&gt;
+    &lt;!-- Is specifically not restricting on CCCC since HPE isn't populating it --&gt;
+    &lt;regex&gt;^[EHLMOYZ][A-Z]{3}\d{2}&lt;/regex&gt;
+    &lt;!-- Exclude Data Delivery specific patterns --&gt;
+    &lt;regexExclude&gt;^LZ[ABC][ABC]9[123] (KWBC|KNCF)&lt;/regexExclude&gt;
+
+    &lt;!-- ECMWF decrypted --&gt;
+    &lt;regex&gt;ecmwf_decrypted&lt;/regex&gt;
+
+    &lt;!-- NWPS pattern --&gt;
+    &lt;regex&gt;\p{Alpha}{3}_nwps_CG1&lt;/regex&gt;
+    &lt;regex&gt;\p{Alpha}{3}_nwps_CG0_Trkng&lt;/regex&gt;
+
+    &lt;!--  grib files without WMO headers --&gt;
+    &lt;regex&gt;.*grib.*&lt;/regex&gt;
+    &lt;regex&gt;.*GRIB.*&lt;/regex&gt;
+    &lt;regex&gt;.*grb.*&lt;/regex&gt;
+    &lt;regex&gt;^US058.*&lt;/regex&gt;
+    &lt;regex&gt;^CMC_reg.*&lt;/regex&gt;
+&lt;/requestPatterns&gt;
+</code></pre>
+<p>The grib/grid decoder distribution file matches all numerical grids distributed over the IDD NGRID feed by matching WMO header, and from CONDUIT by matching various <em>.grib</em> file extensions.  It also includes an example of a <em>regexExclude</em> message which can be used to single out matching values that aren't to be included.</p>
+<hr />
+<h3 id="addtional-information">Addtional Information<a class="headerlink" href="#addtional-information" title="Permanent link"></a></h3>
+<p>Important notes about regular expressions:</p>
+<ul>
+<li>
+<p>Any time a new entry is placed in the <strong>pqact.conf</strong> file on LDM, it is likely a corresponding entry needs to be added to the appropriate Data Distribution file in the data distribution directory, or the data file will be logged to <strong>edex-ingest-unrecognized-files-YYYYMMDD.log</strong>.  </p>
+<blockquote>
+<p>The exception to this rule is if the new data coming from the LDM is a type of data that already exists and EDEX already has a distribution file with a matching regex that will recognize it.</p>
+</blockquote>
+</li>
+<li>
+<p>If you have written a new regex for a distribution file to match on a filename, and it is not matching, then the file most likely has a header. In this case EDEX will only look at the header to match the regex.  You must change your regex to something that matches the header, not the filename.</p>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="edex/ldm/" title="LDM Feeds" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                LDM Feeds
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="edex/new-grid/" title="Ingest a New Grid" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Ingest a New Grid
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2022 Unidata Program Center.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://www.unidata.ucar.edu/software/awips2" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/Unidata/awips2" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/Unidata" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://facebook.com/Unidata" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-eaeb7b21e3.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
