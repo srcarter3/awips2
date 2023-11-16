@@ -808,7 +808,7 @@
 
 
   <li class="md-nav__item">
-    <a href="python/maps-database/" title="Maps Database" class="md-nav__link">
+    <a href="appendix/maps-database/" title="Maps Database" class="md-nav__link">
       Maps Database
     </a>
   </li>
@@ -1049,7 +1049,7 @@
 <hr />
 <h2 id="awips-data-in-the-cloud">AWIPS Data in the Cloud<a class="headerlink" href="#awips-data-in-the-cloud" title="Permanent link"></a></h2>
 <p>Unidata and XSEDE Jetstream have partnered to offer an EDEX data server in the cloud, open to the community.  Select the server in the Connectivity Preferences dialog, or enter <strong><code>edex-cloud.unidata.ucar.edu</code></strong> (without <em>http://</em> before, or <em>:9581/services</em> after).</p>
-<p><img alt="EDEX in the cloud" src="/images/boEbFSf28t.gif" /></p>
+<p><img alt="EDEX in the cloud" src="/images/connectionWindow.png" /></p>
 <hr />
 <h2 id="distributed-computing">Distributed Computing<a class="headerlink" href="#distributed-computing" title="Permanent link"></a></h2>
 <p>AWIPS makes use of service-oriented architecture to request, process, and serve real-time meteorological data.  Because AWIPS was originally developed for use on internal NWS forecast office networks, where operational installations of AWIPS can consist of a dozen servers or more, Unidata modified the package to be more applicable in the University setting.  Because the AWIPS source code was hard-coded with the NWS network configuration, the early Unidata releases were stripped of operation-specific configurations and plugins, and released specifically for standalone installation. This made sense given that a single EDEX instance with a Solid State Drive (SSD) could handle most of the entire NOAAport data volume.  However, with GOES-R(16) now online, and more gridded forecast models being created at finer temporal and spatial resolutions, there was a need to distribute EDEX data decoding in order to handle this firehose of data.</p>
