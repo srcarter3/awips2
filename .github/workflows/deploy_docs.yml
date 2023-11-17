@@ -1,7 +1,7 @@
-# name: publish mkdocs to github pages
-# 
-# on:
-#   workflow_dispatch:
+name: publish mkdocs to github pages
+
+on:
+  workflow_dispatch:
 #   push:
 #     branches:
 #       - unidata_18.2.1
