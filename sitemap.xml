@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://unidata.github.io/awips2/cave/d2d-all-tools/</loc>
+         <lastmod>2023-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://unidata.github.io/awips2/cave/d2d-edit-menus/</loc>
          <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
@@ -96,22 +101,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://unidata.github.io/awips2/cave/d2d-radar-tools/</loc>
-         <lastmod>2023-12-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>http://unidata.github.io/awips2/cave/d2d-radar/</loc>
          <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://unidata.github.io/awips2/cave/d2d-satellite/</loc>
-         <lastmod>2023-12-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://unidata.github.io/awips2/cave/d2d-tools/</loc>
          <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -332,11 +327,6 @@
     </url>
     <url>
          <loc>http://unidata.github.io/awips2/install/start-edex/</loc>
-         <lastmod>2023-12-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://unidata.github.io/awips2/pdf/</loc>
          <lastmod>2023-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
